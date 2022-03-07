@@ -5,4 +5,4 @@ kind: Configuration
 metadata:
   name: crossplane-gitops
 spec:
-  package: ashoksrirama/crossplane-gitops:v0.2
+  package: sriram430/crossplane-gitops:v0.2

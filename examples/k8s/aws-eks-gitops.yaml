@@ -1,36 +1,38 @@
 ---
 
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: ashoksrirama.com/v1alpha1
 kind: ClusterClaim
 metadata:
-  name: team-a-eks
+  name: team-b-eks
   labels:
     cluster-owner: asramaa
 spec:
-  id: team-a-eks
+  id: team-b-eks
   compositionSelector:
     matchLabels:
       provider: aws
       cluster: eks
   parameters:
-    nodeSize: small
+    nodeSize: large
     minNodeCount: 2
+    region: us-west-2
+    
 
 ---
 
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: ashoksrirama.com/v1alpha1
 kind: GitOpsClaim
 metadata:
-  name: team-a-gitops
+  name: team-b-gitops
   labels:
     cluster-owner: asramaa
 spec:
-  id: team-a-gitops
+  id: team-b-gitops
   compositionSelector:
     matchLabels:
       provider: argo
   parameters:
     kubeConfig:
-      secretName: team-a-eks-cluster
+      secretName: team-b-eks-cluster
       secretNamespace: crossplane-system
     gitOpsRepo: https://github.com/ashoksrirama/devops-toolkit-crossplane.git
