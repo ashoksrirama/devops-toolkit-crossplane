@@ -15,7 +15,7 @@ spec:
       values: ["amd64"]
   limits:
     resources:
-      cpu: 1000
+      cpu: 1k
   provider:
     subnetSelector:
       karpenter.sh/discovery: team-2-eks
